@@ -32,9 +32,12 @@ export class TodoComponent implements OnInit {
     this.status$.subscribe((status) => {
       console.log(status);
       if (status === 'success') {
-        this.toastr.success('Thành công', 'Todo đã được cập nhật');
+        this.toastr.success('Success', 'Todo List updated successfully');
       } else if (status === 'error') {
-        this.toastr.error('Lỗi!', 'Có lỗi xảy ra, vui lòng thử lại.');
+        this.toastr.error(
+          'Failure!',
+          'Something went wrong, please try again.'
+        );
       }
     });
   }
