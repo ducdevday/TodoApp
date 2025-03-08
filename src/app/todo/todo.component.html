@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="container">
+    <h2>📝 Let's Get Things Done!</h2>
+
+    <div class="input-container">
+      <input
+        type="text"
+        [(ngModel)]="todo"
+        placeholder="Enter a new task..."
+        class="input-field"
+      />
+      <button class="btn btn-success" (click)="handleAddTodo()">➕ Add</button>
+    </div>
+
+    <ul class="todo-list">
+      <li *ngFor="let todo of allTodos$ | async">
+        <span class="todo-text">{{ todo.content }}</span>
+        <button class="btn-remove" (click)="handleRemoveTodo(todo)">✖</button>
+      </li>
+    </ul>
+  </div>
+</div>
